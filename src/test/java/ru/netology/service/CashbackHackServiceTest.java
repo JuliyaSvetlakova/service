@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class CashbackHackServiceTest {
 
-    /*@Test
+    @Test
     public void theAmountIs1000(){
         CashbackHackService service = new CashbackHackService();
         int amount = 1_000;
@@ -15,7 +15,7 @@ public class CashbackHackServiceTest {
         int expected  = 0;
         int actual = service.remain(amount);
         assertEquals(expected, actual);
-    }*/
+    }
     @Test
     public void theAmountIsMoreThan1000(){
         CashbackHackService service = new CashbackHackService();
@@ -27,6 +27,33 @@ public class CashbackHackServiceTest {
     }
     @Test
     public void theAmountIsLessThan1000(){
+        CashbackHackService service = new CashbackHackService();
+        int amount = 999;
+
+        int expected  = 1;
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void amountIs1000(){
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1_000;
+
+        int expected  = 0;
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void amountIsMoreThan1000(){
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1_001;
+
+        int expected  = 999;
+        int actual = service.remain(amount);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void amountIsLessThan1000(){
         CashbackHackService service = new CashbackHackService();
         int amount = 999;
 
